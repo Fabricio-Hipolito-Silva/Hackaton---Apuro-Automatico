@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: /php/login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,8 +14,8 @@
     <link rel="stylesheet" href="estilo.cssg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="graphic.js" defer></script>
-    <link rel="stylesheet" href="estilo.css">
+    <script src="/javascript/graphic.js" defer></script>
+    <link rel="stylesheet" href="/style/estilo.css">
     <style>
         #canvas {
             width: 80%;
