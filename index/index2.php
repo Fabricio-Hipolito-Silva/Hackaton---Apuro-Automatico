@@ -11,16 +11,34 @@ if (!isset($_SESSION['usuario_id'])) {
 <head>
   <meta charset="UTF-8">
   <title>Desempenho Acadêmico</title>
+  <link rel="stylesheet" href="/style/style3.css">
 </head>
 <body>
 
-  
+
+  <div class="fundo">
+  <nav class="navbar">
+ 
+ <div class="nav-container">
+     <div class="logo">
+         <div class="logo-img"></div>
+         <div class="logo-text">APURO AUTOMÁTICO</div>
+     </div>
+     <div class="nav-links">
+         <a href="#inicio">Início</a>
+         <a href="#nota">Nota do Provão</a>
+         <a href="#processo">Processo</a>
+     </div>
+ </div>
+</nav>
+<img src="/images/ProvaTec.png" alt="" class="image">
+  </div>
    <section class="container_graficos">
-      <h2 class="titulo">Desempenho acadêmico dos alunos nos últimos anos:</h2>
+    <p class="titulo">Desempenho acadêmico dos alunos nos últimos anos:</p>
   
   <div>
    <canvas class="grafico_inicial" >
-
+      
    </canvas>
   </div>
   
@@ -38,23 +56,23 @@ if (!isset($_SESSION['usuario_id'])) {
 </section>
 
 <section class="container_2025">
-<h2 class="titulo">2025</h2>
+<h2 class="titulo1">2025</h2><br>
 
 <div class="boxs">
 
-<div class="box, box_1">
-    <h3>Percentual geral</h3>
-    <h3>100%</h3>
+<div class="box">
+    <h3 class="center">Percentual geral</h3>
+    <br><br><h3 class="center1">100%</h3>
 </div>
 
-<div class="box, box_2">
-    <h3>Percentual ensino médio</h3>
-    <h3>40%</h3>
+<div class="box box_2">
+    <h3 class="center2">Percentual ensino médio</h3>
+  <br><br>  <h3 class="center3">40%</h3>
 </div>
 
-<div class="box, box_3">
-    <h3>Percentual base técnica</h3>
-    <h3>60%</h3>
+<div class="box box_3">
+    <h3 class="center4">Percentual base técnica</h3>
+   <br><br> <h3 class="center5">60%</h3>
 </div>
 
 </div>
@@ -74,10 +92,10 @@ if (!isset($_SESSION['usuario_id'])) {
 </head>
 <body>
 
-  
+  <div class="container_g">
   <table class="tabela">
     <thead class="tabela-cabecalho">
-      <tr>
+      <tr class="linha">
         <th class="coluna-turma">Turma</th>
         <th class="coluna-ensino-medio">Ensino Médio</th>
         <th class="coluna-ensino-tecnico">Ensino Técnico</th>
@@ -101,26 +119,28 @@ if (!isset($_SESSION['usuario_id'])) {
       </tr>
     
   </table>
+  </div>
 
 
   <section class="container_2024">
-<h2 class="titulo">2024</h2>
+    
+<h2 class="titulo1 titulo2">2024</h2>
 
 <div class="boxs">
 
-<div class="box, box_4">
-    <h3>Percentual geral</h3>
-    <h3>100%</h3>
+<div class="box box_4">
+    <h3 class="center">Percentual geral</h3>
+    <br><br>    <h3 class="center5">100%</h3>
 </div>
 
-<div class="box, box_5">
-    <h3>Percentual ensino médio</h3>
-    <h3>70%</h3>
+<div class="box box_5">
+    <h3 class="center4">Percentual ensino médio</h3>
+    <br><br>  <h3 class="center5">70%</h3>
 </div>
 
-<div class="box, box_6">
-    <h3>Percentual base técnica</h3>
-    <h3>30%</h3>
+<div class="box box_6">
+    <h3 class="center4">Percentual base técnica</h3>
+    <br><br> <h3 class="center5">30%</h3>
 </div>
 
 </div>
@@ -134,7 +154,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 
 
-  
+  <div class="container_g">
   <table class="tabela">
     <thead class="tabela-cabecalho">
       <tr>
@@ -161,25 +181,26 @@ if (!isset($_SESSION['usuario_id'])) {
       </tr>
     
   </table>
+  </div>
 
     <section class="container_2023">
-<h2 class="titulo">2023</h2>
+<h2 class="titulo1">2023</h2>
 
 <div class="boxs">
 
-<div class="box, box_7">
-    <h3>Percentual geral</h3>
-    <h3>100%</h3>
+<div class="box box_7">
+    <h3 class="center">Percentual geral</h3>
+    <br><br>  <h3 class="center5">100%</h3>
 </div>
 
-<div class="box, box_8">
-    <h3>Percentual ensino médio</h3>
-    <h3>60%</h3>
+<div class="box box_8">
+    <h3 class="center4">Percentual ensino médio</h3>
+    <br><br>  <h3 class="center5">60%</h3>
 </div>
 
-<div class="box, box_9">
-    <h3>Percentual base técnica</h3>
-    <h3>40%</h3>
+<div class="box box_9">
+    <h3 class="center4">Percentual base técnica</h3>
+    <br><br> <h3 class="center5">40%</h3>
 </div>
 
 </div>
@@ -194,7 +215,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
   
   
-  
+  <div class="container_g">
   <table class="tabela">
     <thead class="tabela-cabecalho">
       <tr>
@@ -221,6 +242,7 @@ if (!isset($_SESSION['usuario_id'])) {
       </tr>
     
   </table>
+  </div>
 
   <footer>
  <p>© 2025 Provão ETEC - Centro Paula Souza</p>
