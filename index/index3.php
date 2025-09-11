@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/javascript/graphic.js" defer></script>
     <link rel="stylesheet" href="/style/style2.css">
-    
+
 </head>
 <body>
       <!-- Navbar -->
