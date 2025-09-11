@@ -39,9 +39,7 @@ option {
   color: #fff;
   padding: 10px;
 }
-
     </style>
-
 </head>
 <body>
     
