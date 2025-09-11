@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (move_uploaded_file($_FILES['prova']['tmp_name'], $uploadFile)) {
         $usuario_id = $_SESSION['usuario_id'];
-        $stmt = $conn->prepare("INSERT INTO provas (usuario_id, caminho_imagem) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO prova (usuario_id, caminho_imagem) VALUES (?, ?)");
         $stmt->execute([$usuario_id, $uploadFile]);
-
+        
         echo "<div class='container'>";
         echo "<h2>Arquivo enviado com sucesso!</h2>";
         echo "<p>Foto salva em: $uploadFile</p>";

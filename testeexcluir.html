@@ -1,0 +1,80 @@
+<input type="file" id="upload">
+<canvas id="canvas"></canvas>
+<div id="resultado"></div>
+
+<script src="https://docs.opencv.org/4.x/opencv.js"></script>
+<script>
+  // Espera o OpenCV carregar
+  cv['onRuntimeInitialized'] = () => {
+    document.getElementById("upload").addEventListener("change", function(e) {
+      let imgElement = new Image();
+      imgElement.onload = function() {
+        let src = cv.imread(imgElement);
+        let gray = new cv.Mat();
+        cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
+
+        // Threshold (binarização)
+        let thresh = new cv.Mat();
+        cv.threshold(gray, thresh, 0, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU);
+
+        // Mostra imagem processada no canvas
+        cv.imshow("canvas", thresh);
+
+        // ======== CONFIGURAÇÃO DO GABARITO =========
+        let numQuestoes = 12;
+        let numAlternativas = 3;
+        let questaoAltura = Math.floor(thresh.rows / numQuestoes);
+        let altLargura = Math.floor(thresh.cols / numAlternativas);
+
+        let respostas = [];
+        let letras = ["A", "B", "C"];
+
+        for (let q = 0; q < numQuestoes; q++) {
+          let contagem = [];
+          for (let a = 0; a < numAlternativas; a++) {
+            let x = a * altLargura;
+            let y = q * questaoAltura;
+
+            // Região de interesse (ROI) para cada alternativa
+            let roi = thresh.roi(new cv.Rect(x, y, altLargura, questaoAltura));
+            let preto = cv.countNonZero(roi);
+            contagem.push(preto);
+            roi.delete();
+          }
+
+          // Pega a alternativa com mais marcação
+          let marcada = contagem.indexOf(Math.max(...contagem));
+          respostas.push(letras[marcada]);
+        }
+
+        // ======== MOSTRAR RESULTADO =========
+        let resultadoDiv = document.getElementById("resultado");
+        resultadoDiv.innerHTML = "<h3>Respostas detectadas:</h3>";
+        respostas.forEach((resp, i) => {
+          resultadoDiv.innerHTML += `Questão ${i+1}: ${resp}<br>`;
+        });
+
+        // Limpeza de memória
+        src.delete(); gray.delete(); thresh.delete();
+      };
+      imgElement.src = URL.createObjectURL(e.target.files[0]);
+    });
+  };
+</script>
+
+<style>
+  #canvas {
+    border: 1px solid black;
+    margin-top: 10px;
+  }
+  #resultado {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    text-align: center;
+  }
+  #upload {
+    margin-top: 20px;
+  }
+</style>

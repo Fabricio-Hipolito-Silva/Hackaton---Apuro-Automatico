@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Tela Gabarito</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .imgStand{
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Gabarito</h1>
+        <p>Envie a foto do gabarito preenchido</p>
+    <input class="imgStand" type="file" name="imgStand" id="imgStandInput" accept="image/*" required>
+        <br><br>
+    <img id="preview" src="#" alt="Preview da imagem" style="display:none; max-width: 300px;">
+        <br>
+    <input type="text" placeholder="RM">
+    <button type="button">Enviar</button>
+    </section>
+      <script>
+        const imgInput = document.getElementById("imgStandInput")
+        const preview = document.getElementById("preview")
+
+        imgInput.addEventListener('change', function(){
+            const img = this.files[0]; //Pega a imagem upada
+            if (img) { // Ve se algum arquivo foi selecionado
+                const reader = new FileReader(); //Faz um objeto FileReader
+                reader.onload = function (evento) {
+                    preview.src = evento.target.result; //Faz com que a classe src do preview seja a imagem carregada em base64
+                    preview.style.display = "block";
+                }
+                reader.readAsDataURL(img);  //le de fato a imagem.
+            }else{
+                preview.src =  "#";
+            }
+        })
+    </script>
+</body>
+</html>

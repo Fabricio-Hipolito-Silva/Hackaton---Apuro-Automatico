@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($usuario && $usuario['senha'] === $senha) {
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['usuario_nome'] = $usuario['nome'];
-            header("Location: /index/index2.php");
+            header("Location: ../index/index2.php");
             exit;
         } else {
             $erro = "Login ou senha incorretos!";
