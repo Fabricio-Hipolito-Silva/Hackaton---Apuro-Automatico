@@ -22,8 +22,8 @@ if (!isset($_SESSION['usuario_id'])) {
  <div class="nav-container">
      <div class="logo">
          <div class="logo-img"></div>
-         <div class="logo-text">APURO AUTOMÁTICO</div>
-     </div>
+         
+    
      <div class="nav-links">
          <a href="#inicio">Início</a>
          <a href="#nota">Nota do Provão</a>
@@ -31,7 +31,7 @@ if (!isset($_SESSION['usuario_id'])) {
      </div>
  </div>
 </nav>
-<img src="/images/ProvaTec.png" alt="" class="image">
+<img src="/images/ProvaTec.jpeg" alt="" class="image">
   </div>
    <section class="container_graficos">
     <p class="titulo">Desempenho acadêmico dos alunos nos últimos anos:</p>
