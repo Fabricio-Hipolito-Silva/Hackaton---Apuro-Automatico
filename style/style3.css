@@ -48,7 +48,7 @@ body {
 }
 
 .navbar {
-  background: #111;
+  background: #000000;
   color: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   position: sticky;
@@ -89,7 +89,7 @@ body {
 }
 
 .fundo {
-  background: #111;
+  background: #000000;
   width: 100%;
   margin: 0;
   padding-bottom: 3rem;
@@ -97,6 +97,26 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.descricao {
+    font-size: 1.2em;          /* tamanho agradável para leitura */
+    color: #333;               /* cor escura para contraste */
+    margin: 1.5rem 3vw;        /* espaço em cima/baixo e nas laterais */
+    line-height: 1.6;          /* deixa o texto mais arejado */
+    font-weight: 700;
+        /* um pouco mais destacado, mas não bold */
+    text-align: left;          /* alinhamento à esquerda */
+    max-width: 900px;          /* não deixar o texto muito largo */
+}
+
+@media (max-width: 800px) {
+    .descricao {
+        font-size: 1em;
+        margin: 1rem 2vw;
+        text-align: center;    /* centraliza em telas pequenas */
+    }
+}
+
 
 .image {
   width: 100%;
@@ -109,7 +129,7 @@ body {
 }
 
 .titulo, .titulo1 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 700;
   margin: 3rem 0 2rem 0;
   color: #222;
@@ -195,7 +215,9 @@ th {
 .grafico_inicial, .grafico_2025, .grafico_2024, .grafico_2023 {
   display: block;
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 650px;  /* largura máxima */
+  width: 100%;         /* largura real do canvas */
+  height: auto;       /* altura automática para manter a proporção */ 
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -263,12 +285,6 @@ footer {
     box-sizing: border-box;
     height: 110px;
     font-size: 1em;
-  }
-  .titulo, .titulo1 {
-    font-size: 1.1em;
-    margin: 1rem 0;
-    text-align: left;
-    margin-left: 2vw;
   }
   .container_graficos, .container_2025, .container_2024, .container_2023 {
     padding: 1rem 0.5rem;
