@@ -14,7 +14,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/javascript/graphic.js" defer></script>
-    <link rel="stylesheet" href="/style/style2.css">
+    <link rel="stylesheet" href="../style/style2.css">
 
 </head>
 <body>
@@ -28,8 +28,9 @@ if (!isset($_SESSION['usuario_id'])) {
      </div>
      <div class="nav-links">
          <a href="#inicio">Início</a>
-         <a href="#nota">Nota do Provão</a>
+         <a href="../php/notas.php">Nota do Provão</a>
          <a href="#processo">Processo</a>
+         <a href="../php/logout.php" class="botao-sair">Sair</a>
      </div>
  </div>
 </nav>
@@ -57,7 +58,7 @@ Ele também serve como uma forma de medir a qualidade do ensino oferecido pela i
             
          </div>
          <div class="hero-image">
-             Imagem Ilustrativa do Provão Nacional
+             Imagem Ilustrativa do Provão
          </div>
      </div>
  </section>

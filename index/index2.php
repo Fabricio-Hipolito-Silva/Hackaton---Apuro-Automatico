@@ -30,6 +30,7 @@ if (!isset($_SESSION['usuario_id'])) {
          <a href="#inicio">Início</a>
          <a href="#nota">Nota do Provão</a>
          <a href="#processo">Processo</a>
+         <a href="../php/logout.php">Sair</a>
      </div>
  </div>
 </nav>
