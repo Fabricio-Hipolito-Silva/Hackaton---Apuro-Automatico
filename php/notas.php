@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario_id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resultado do Aluno - Provão</title>
+  <link rel="icon" href="/images/favicon.png" type="image/jpeg">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
@@ -104,7 +105,6 @@ header a:hover {
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
     .chart-container h3 {
       text-align: center;
       margin-bottom: 15px;
@@ -290,10 +290,9 @@ header a:hover {
       <h3>Acertos x Erros</h3>
       <canvas id="pizzaChart"></canvas>
     </div>
-    <div class="chart-container">
-      <h3>Desempenho por Matéria</h3>
-      <canvas id="materiasChart"></canvas>
-    </div>
+    <div class="graficos-container chart-container" style="margin-bottom: 3rem; padding-top: 32.5%;">
+    <canvas id="desempenhoMateria"></canvas>
+  </div>
   </div>
 
   <!-- Questões erradas -->
@@ -327,6 +326,24 @@ header a:hover {
   </footer>
 
   <script>
+        // Dados fictícios
+        const ctx2 = document.getElementById('desempenhoMateria').getContext('2d');
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ["Português","Matemática","Artes","Fund. Info","Est. Av. Mat.","Física","Biologia","App Web","Interface Web","Arte Dig.","Química","Prog. Alg.","Ed. Física","Empreed.","Inglês","Ética"],
+            datasets: [{
+                label: 'Acertos',
+                data: [10,10,5,5,5,5,5,5,5,4,1,5,4,5,5,1],
+                backgroundColor: '#2196f3'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, max: 10, stepSize: 1 } }
+        }
+    });
     // Gráfico de Pizza: Acertos x Erros
     new Chart(document.getElementById('pizzaChart'), {
       type: 'doughnut',

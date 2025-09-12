@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <meta charset="UTF-8">
     <title>Correção da Prova</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/favicon.png" type="image/jpeg">
 </head>
 <body>
 <div class="container">

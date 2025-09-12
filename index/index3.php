@@ -13,6 +13,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <title>Página Aluno</title> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/images/favicon.png" type="image/jpeg">
     <script src="/javascript/graphic.js" defer></script>
     <link rel="stylesheet" href="../style/style2.css">
 
@@ -29,7 +30,6 @@ if (!isset($_SESSION['usuario_id'])) {
      <div class="nav-links">
          <a href="#inicio">Início</a>
          <a href="../php/notas.php">Nota do Provão</a>
-         <a href="#processo">Processo</a>
          <a href="../php/logout.php" class="botao-sair">Sair</a>
      </div>
  </div>
@@ -58,26 +58,10 @@ Ele também serve como uma forma de medir a qualidade do ensino oferecido pela i
             
          </div>
          <div class="hero-image">
-             Imagem Ilustrativa do Provão
+             <img src="/images/prova-ou-historico.jpeg">
          </div>
      </div>
  </section>
- 
- <div class="features">
-     <div class="feature-card">
-         <h3>Objetivos do Provão</h3>
-         <p>Avaliar o rendimento dos alunos dos cursos de graduação em relação aos conteúdos programáticos, suas habilidades e competências.</p>
-     </div>
-     <div class="feature-card">
-         <h3>Importância</h3>
-         <p>Os resultados influenciam desde a escolha dos estudantes até o credenciamento e recredenciamento de instituições de ensino.</p>
 
-     </div>
-      <div class="feature-card">
-         <h3>Rendimento Anual</h3>
-         <p></p>
-     </div>
- </div>
-</div>
  
 </html>     
